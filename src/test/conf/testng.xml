@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="tapestry5-jqPlot Application Test Suite" annotations="1.5">
+    <test name="JQuery jqPlot Integration Tests"  enabled="true">
+    
+        <parameter name="tapestry.web-app-folder" value="src/test/jquery/jqplot/webapp"/>
+        <parameter name="browserStartCommand" value="*googlechrome" />
+
+        <classes>
+            <class name="org.got5.tapestry5.jquery.jqplot.test.JQueryTest"></class>
+        </classes>
+
+    </test>
+</suite>
