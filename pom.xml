@@ -203,6 +203,17 @@
 			<url>http://archiva.openqa.org/repository/releases/</url>
 		</repository>
 	</repositories>
+	
+	<distributionManagement>
+		<repository>
+			<id>devlab722-repo</id>
+			<url>http://nexus.devlab722.net/nexus/content/repositories/releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>devlab722-snapshot-repo</id>
+			<url>http://nexus.devlab722.net/nexus/content/repositories/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
 
 	<properties>
 		<tapestry-release-version>5.3.2</tapestry-release-version>
