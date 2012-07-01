@@ -1,7 +1,8 @@
-# Tapestry 5 jQplot integration Module - 3.2.0-SNAPSHOT
+# Tapestry 5 jQplot integration Module - 3.3.0-SNAPSHOT
 
 ## Changelog
 
+- 3.3.0-SNAPSHOT : Upgrade to 5.3.3  
 - 3.2.0-SNAPSHOT : initial snapshot 
 
 ## Features
