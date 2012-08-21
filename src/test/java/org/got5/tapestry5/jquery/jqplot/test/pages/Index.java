@@ -33,14 +33,14 @@ public class Index
 
     private List<List<XYDataItem>> testData;
 
-    @Component(parameters = {"dataItems=testData"})
+    @Component(parameters = {"dataItems=testData", "graphTitle=literal:XYLineChart"})
     private JqPlot chart1;
 
-    @Component(parameters = {"dataItems=testPieData"})
+    @Component(parameters = {"dataItems=testPieData", "graphTitle=literal:PieChart"})
     private JqPlotPie chart2 ;
-
-    @Component(parameters = {"dataItems=testData"})
-    private JqPlot chart3;
+    
+    @Component(parameters = {"dataItems=testData", "graphTitle=literal:XYLineChartWithZooming"})
+    private JqPlotZooming chart3;
 
     @Cached
     public List getTestData()

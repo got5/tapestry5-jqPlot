@@ -32,6 +32,7 @@ import org.apache.tapestry5.json.JSONObject;
 import org.apache.tapestry5.services.javascript.JavaScriptSupport;
 import org.got5.tapestry5.jquery.jqplot.data.DataJqPlotSerializer;
 import org.got5.tapestry5.jquery.jqplot.services.javascript.JqPlotJavaScriptStack;
+import org.got5.tapestry5.jquery.jqplot.util.StringUtil;
 
 
 import java.util.List;
@@ -57,6 +58,9 @@ public class JqPlot implements ClientElement
 	 */
 	@Parameter(name = "dataItems", required = false, defaultPrefix = BindingConstants.PROP)
 	private List<List<DataJqPlotSerializer>> dataItemsList;
+	
+	@Parameter(name = "graphTitle", required = false, defaultPrefix = BindingConstants.LITERAL)
+	private String graphTitle;
 
 	/**
 	 * PageRenderSupport to get unique client side id.
@@ -103,11 +107,28 @@ public class JqPlot implements ClientElement
 		JSONObject spec = new JSONObject();
 		JSONObject config = new JSONObject();
 		JSONArray dataArray = null;
-
+	
 		//
 		// Let subclasses do more.
 		//
 		configure(config);
+		
+		// Set Graph Title if it is provided
+		if(StringUtil.isNonEmptyString(graphTitle)) {
+			JSONObject optionObjRef = null;
+			try {
+				Object optionObj = config.get("options");
+				optionObjRef = (JSONObject)optionObj;			
+			} catch ( RuntimeException re ) {			
+				// Some graphs might not have option object at all. We need to set option object and title both in that case. 
+				if(re.getMessage().endsWith("not found.")) {
+					optionObjRef = new JSONObject();
+				}			
+			}
+			if(optionObjRef != null) {
+				optionObjRef.put("title", graphTitle.trim());
+			}
+		}
 
 		//
 		// do it only if user give us some values
