@@ -7,7 +7,7 @@ import org.apache.tapestry5.json.JSONObject;
 /**
  * This graph plots X and Y with zooming feature explained on this example page http://www.jqplot.com/tests/zooming.php
  */
-@Import( library={ "${jquery.jqplot.core.path}/jquery.jqplot.${jquery.jqplot.version}/plugins/jqplot.cursor.min.js" })
+@Import( library={ "${jquery.jqplot.core.path}/jquery/jqplot/${jquery.jqplot.version}/plugins/jqplot.cursor.min.js" })
 public class JqPlotZooming extends JqPlot {
 		
 	/**

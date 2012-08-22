@@ -4,7 +4,7 @@ import org.apache.tapestry5.annotations.Import;
 import org.apache.tapestry5.json.JSONLiteral;
 import org.apache.tapestry5.json.JSONObject;
 
-@Import( library={ "${jquery.jqplot.core.path}/jquery.jqplot.${jquery.jqplot.version}/plugins/jqplot.pieRenderer.js" })
+@Import( library={ "${jquery.jqplot.core.path}/jquery/jqplot/${jquery.jqplot.version}/plugins/jqplot.pieRenderer.js" })
 public class JqPlotPie extends JqPlot {
 	
 	/**

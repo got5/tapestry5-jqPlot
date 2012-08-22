@@ -11,8 +11,8 @@ import org.got5.tapestry5.jquery.jqplot.util.DateUtil;
 /**
  * This graph plots X (Date) and Y with zooming feature explained on this example page http://www.jqplot.com/tests/zooming.php
  */
-@Import( library={ "${jquery.jqplot.core.path}/jquery.jqplot.${jquery.jqplot.version}/plugins/jqplot.cursor.min.js", 
-		           "${jquery.jqplot.core.path}/jquery.jqplot.${jquery.jqplot.version}/plugins/jqplot.dateAxisRenderer.min.js" })
+@Import( library={ "${jquery.jqplot.core.path}/jquery/jqplot/${jquery.jqplot.version}/plugins/jqplot.cursor.min.js", 
+		           "${jquery.jqplot.core.path}/jquery/jqplot/${jquery.jqplot.version}/plugins/jqplot.dateAxisRenderer.min.js" })
 public class JqPlotDateZooming extends JqPlot {	
 	
 	@Parameter(name = "xAxisMinDate", required=false)
