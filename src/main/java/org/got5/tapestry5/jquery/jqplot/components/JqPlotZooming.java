@@ -24,7 +24,8 @@ public class JqPlotZooming extends JqPlot {
     	JSONObject cursor = new JSONObject();
     	cursor.put("show", new JSONLiteral("true")); 
     	cursor.put("zoom", new JSONLiteral("true")); 
-    	cursor.put("showTooltip", new JSONLiteral("true"));     
+    	cursor.put("showTooltip", new JSONLiteral("true"));   
+    	
     	options.put("cursor", cursor);    	
     	
     }
