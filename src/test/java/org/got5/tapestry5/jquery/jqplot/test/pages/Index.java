@@ -14,6 +14,7 @@
 
 package org.got5.tapestry5.jquery.jqplot.test.pages;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -44,6 +45,7 @@ public class Index
     private JqPlotZooming chart3;
  
     @Component(parameters = {"dataItems=testDateData", 
+    		                 "seriesLabels=dateSeriesLabels",
     		                 "xAxisMinDate=minDate",
     		                 "xAxisMaxDate=maxDate",
     		                 "xAxisTickerInterval=literal:30 minutes",
@@ -56,6 +58,13 @@ public class Index
     
     public Date getMinDate() {
     	return ((List<DateValueDataItem>) getTestDateData().get(0)).get( ((List<DateValueDataItem>) getTestDateData().get(0)).size() -1 ).getDate();
+    }
+    
+    public List<String> getDateSeriesLabels() {
+    	List<String> labels = new ArrayList<String>();
+    	labels.add("Series1");
+    	labels.add("Series2");
+    	return labels;
     }
     
     @Cached

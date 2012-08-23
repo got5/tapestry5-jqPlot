@@ -1,9 +1,12 @@
 package org.got5.tapestry5.jquery.jqplot.components;
 
 import java.util.Date;
+import java.util.List;
 
+import org.apache.tapestry5.BindingConstants;
 import org.apache.tapestry5.annotations.Import;
 import org.apache.tapestry5.annotations.Parameter;
+import org.apache.tapestry5.json.JSONArray;
 import org.apache.tapestry5.json.JSONLiteral;
 import org.apache.tapestry5.json.JSONObject;
 import org.got5.tapestry5.jquery.jqplot.util.DateUtil;
@@ -24,6 +27,9 @@ public class JqPlotDateZooming extends JqPlot {
 	@Parameter(name = "xAxisTickerInterval", required=false)
 	private String xAxisTickerInterval;
 	
+	@Parameter(name = "seriesLabels", required = false, defaultPrefix = BindingConstants.PROP)
+	private List<String> seriesLabels;
+	
 	/**
      * Invoked to allow subclasses to further configure the parameters passed to this component's javascript
      * options. Subclasses may override this method to configure additional features of the jqPlot library.
@@ -34,6 +40,20 @@ public class JqPlotDateZooming extends JqPlot {
     {
     	JSONObject options = new JSONObject();    
     	config.put("options", options);
+    	
+    	// data items might have series labels 
+		// user is responsible for setting label for each series. Do not make mistake. 
+    	// Size of dataSeries and Size of series lable has to be equal.
+		if(seriesLabels != null && seriesLabels.size()>0) {
+			JSONArray series = new JSONArray();
+			for(String currentLabel: seriesLabels) {
+				JSONObject labelEntry = new JSONObject();
+				labelEntry.put("label", new JSONLiteral("'" + currentLabel + "'"));
+				series.put(labelEntry);
+			}
+			options.put("series", series);
+			options.put("legend", new JSONObject("{ show:true, location: 'nw' }"));
+		}
     	
     	JSONObject axes = new JSONObject();
     	options.put("axes", axes);
@@ -61,6 +81,7 @@ public class JqPlotDateZooming extends JqPlot {
     	cursor.put("show", new JSONLiteral("true")); 
     	cursor.put("zoom", new JSONLiteral("true")); 
     	cursor.put("showTooltip", new JSONLiteral("true")); 
+    	cursor.put("dblClickReset", new JSONLiteral("true"));
     	options.put("cursor", cursor);    	
     	
     }
