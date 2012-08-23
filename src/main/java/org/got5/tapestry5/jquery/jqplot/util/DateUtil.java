@@ -14,7 +14,7 @@ public abstract class DateUtil {
 			SimpleDateFormat formatter = new SimpleDateFormat(timestampPattern);
 			return formatter.format(date);
 		} 
-		return date != null ? date.toString() : null;
+		return date != null ? date.toString() : null;  
 	}
 		
 }
