@@ -62,20 +62,20 @@ public class JqPlotJavaScriptStack implements JavaScriptStack {
 
         if (productionMode) {
         	
-        	stylesheetStack = F.flow("${jquery.jqplot.core.path}/jquery.jqplot.${jquery.jqplot.version}/jquery.jqplot.min.css")
+        	stylesheetStack = F.flow("${jquery.jqplot.core.path}/jquery/jqplot/${jquery.jqplot.version}/jquery.jqplot.min.css")
         	.map(pathToStylesheetLink).toList();
 
             javaScriptStack = F
-                .flow("${jquery.jqplot.core.path}/jquery.jqplot-${jquery.jqplot.version}/jquery.jqplot.min.js")
+                .flow("${jquery.jqplot.core.path}/jquery/jqplot/${jquery.jqplot.version}/jquery.jqplot.min.js")
             .map(pathToAsset).toList();
 
         } else {
         	
-        	stylesheetStack = F.flow("${jquery.jqplot.core.path}/jquery.jqplot.${jquery.jqplot.version}/jquery.jqplot.css")
+        	stylesheetStack = F.flow("${jquery.jqplot.core.path}/jquery/jqplot/${jquery.jqplot.version}/jquery.jqplot.css")
         	.map(pathToStylesheetLink).toList();
 
             javaScriptStack = F
-                .flow( "${jquery.jqplot.core.path}/jquery.jqplot.${jquery.jqplot.version}/jquery.jqplot.js")
+                .flow( "${jquery.jqplot.core.path}/jquery/jqplot/${jquery.jqplot.version}/jquery.jqplot.js")
             .map(pathToAsset).toList();
 
         }

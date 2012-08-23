@@ -61,7 +61,7 @@ public class JqPlot implements ClientElement
 	
 	@Parameter(name = "graphTitle", required = false, defaultPrefix = BindingConstants.LITERAL)
 	private String graphTitle;
-
+	
 	/**
 	 * PageRenderSupport to get unique client side id.
 	 */
@@ -114,11 +114,10 @@ public class JqPlot implements ClientElement
 		configure(config);
 		
 		// Set Graph Title if it is provided
+		JSONObject optionObjRef = null;
 		if(StringUtil.isNonEmptyString(graphTitle)) {
-			JSONObject optionObjRef = null;
 			try {
-				Object optionObj = config.get("options");
-				optionObjRef = (JSONObject)optionObj;			
+				optionObjRef = (JSONObject) config.get("options");			
 			} catch ( RuntimeException re ) {			
 				// Some graphs might not have option object at all. We need to set option object and title both in that case. 
 				if(re.getMessage().endsWith("not found.")) {
@@ -127,6 +126,7 @@ public class JqPlot implements ClientElement
 			}
 			if(optionObjRef != null) {
 				optionObjRef.put("title", graphTitle.trim());
+				config.put("options", optionObjRef);
 			}
 		}
 
@@ -143,7 +143,6 @@ public class JqPlot implements ClientElement
 				dataArray.put(data);
 			}
 		}
-
 
 		//
 		// if the user doesn't give us some chart values we add an empty value array.

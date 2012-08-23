@@ -9,7 +9,7 @@ import org.got5.tapestry5.jquery.jqplot.util.DateUtil;
 /**
  * inspired from chenillekit project author mlusetti 
  */
-public class DateValueDataItem implements Serializable, DataJqPlotSerializer {
+public class DateValueDataItem implements Serializable, Comparable, DataJqPlotSerializer {
 
 	/**
 	 * 
@@ -83,7 +83,68 @@ public class DateValueDataItem implements Serializable, DataJqPlotSerializer {
         _date = date;
     }
 
-   
+    /**
+     * Tests if this object is equal to another.
+     *
+     * @param obj the object to test against for equality (<code>null</code>
+     *            permitted).
+     *
+     * @return A boolean.
+     */
+    public boolean equals(Object obj)
+    {
+        if (this == obj) return true;
+        if (!(obj instanceof DateValueDataItem)) return false;
+
+        DateValueDataItem that = (DateValueDataItem) obj;
+
+        if (_date != null ? !_date.equals(that._date) : that._date != null) return false;
+        if (_value != null ? !_value.equals(that._value) : that._value != null) return false;
+
+        return true;
+    }
+    
+    /**
+     * Returns an integer indicating the order of this object relative to
+     * another object.
+     * <p/>
+     * For the order we consider only the x-value:
+     * negative == "less-than", zero == "equal", positive == "greater-than".
+     *
+     * @param o1 the object being compared to.
+     *
+     * @return An integer indicating the order of this data pair object
+     *         relative to another object.
+     */
+    public int compareTo(Object o1)
+    {
+
+        int result;
+
+        // CASE 1 : Comparing to another TimeSeriesDataPair object
+        // -------------------------------------------------------
+        if (o1 instanceof DateValueDataItem)
+        {
+        	DateValueDataItem dataItem = (DateValueDataItem) o1;
+            long compare = _date.getTime() - dataItem.getDate().getTime();
+            if (compare > 0)
+                result = 1;
+            else
+            {
+                if (compare < 0)
+                    result = -1;
+                else
+                    result = 0;
+            }
+        }
+        // CASE 2 : Comparing to a general object
+        // ---------------------------------------------
+        // consider time periods to be ordered after general objects
+        else
+            result = 1;
+
+        return result;
+    }
 
     /**
      * Returns a hash code.
