@@ -10,12 +10,19 @@ import org.apache.tapestry5.json.JSONArray;
 import org.apache.tapestry5.json.JSONLiteral;
 import org.apache.tapestry5.json.JSONObject;
 import org.got5.tapestry5.jquery.jqplot.util.DateUtil;
+import org.got5.tapestry5.jquery.jqplot.util.StringUtil;
+
 
 /**
  * This graph plots X (Date) and Y with zooming feature explained on this example page http://www.jqplot.com/tests/zooming.php
  */
 @Import( library={ "${jquery.jqplot.core.path}/jquery/jqplot/${jquery.jqplot.version}/plugins/jqplot.cursor.min.js", 
-		           "${jquery.jqplot.core.path}/jquery/jqplot/${jquery.jqplot.version}/plugins/jqplot.dateAxisRenderer.min.js" })
+				   "${jquery.jqplot.core.path}/jquery/jqplot/${jquery.jqplot.version}/plugins/jqplot.logAxisRenderer.min.js",
+				   "${jquery.jqplot.core.path}/jquery/jqplot/${jquery.jqplot.version}/plugins/jqplot.logAxisRenderer.min.js",
+				   "${jquery.jqplot.core.path}/jquery/jqplot/${jquery.jqplot.version}/plugins/jqplot.canvasTextRenderer.min.js",
+				   "${jquery.jqplot.core.path}/jquery/jqplot/${jquery.jqplot.version}/plugins/jqplot.canvasAxisLabelRenderer.min.js",
+				   "${jquery.jqplot.core.path}/jquery/jqplot/${jquery.jqplot.version}/plugins/jqplot.canvasAxisTickRenderer.min.js",
+		           "${jquery.jqplot.core.path}/jquery/jqplot/${jquery.jqplot.version}/plugins/jqplot.dateAxisRenderer.min.js"})
 public class JqPlotDateZooming extends JqPlot {	
 	
 	@Parameter(name = "xAxisMinDate", required=false)
@@ -26,6 +33,12 @@ public class JqPlotDateZooming extends JqPlot {
 	
 	@Parameter(name = "xAxisTickerInterval", required=false)
 	private String xAxisTickerInterval;
+	
+	@Parameter(name = "xAxisLabel", required=false)
+	private String xAxisLabel;
+	
+	@Parameter(name = "yAxisLabel", required=false)
+	private String yAxisLabel;
 	
 	@Parameter(name = "seriesLabels", required = false, defaultPrefix = BindingConstants.PROP)
 	private List<String> seriesLabels;
@@ -61,6 +74,10 @@ public class JqPlotDateZooming extends JqPlot {
     	JSONObject xaxis = new JSONObject();
     	axes.put("xaxis", xaxis);
     	
+    	if(StringUtil.isNonEmptyString(xAxisLabel)) {
+    		xaxis.put("label", new JSONLiteral("'"+xAxisLabel.trim()+"'"));
+    	}
+    	
     	xaxis.put("renderer", new JSONLiteral("jQuery.jqplot.DateAxisRenderer"));
     	
     	if(xAxisMinDate != null) {
@@ -73,16 +90,35 @@ public class JqPlotDateZooming extends JqPlot {
     		xaxis.put("tickInterval", new JSONLiteral("'" + xAxisTickerInterval + "'"));
     	}
     	
-    	JSONObject tickOptions = new JSONObject();
-    	tickOptions.put("formatString", new JSONLiteral("'%H:%M:%S'"));
-    	xaxis.put("tickOptions", tickOptions);
+    	JSONObject xTickOptions = new JSONObject();
+    	xaxis.put("labelRenderer", new JSONLiteral("jQuery.jqplot.CanvasAxisLabelRenderer"));
+    	xTickOptions.put("formatString", new JSONLiteral("'%H:%M:%S'"));
+    	xTickOptions.put("labelPosition", new JSONLiteral("'middle'"));
+    	xTickOptions.put("angle", new JSONLiteral("-90"));
+    	xaxis.put("tickOptions", xTickOptions);
+    	xaxis.put("tickRenderer", new JSONLiteral("jQuery.jqplot.CanvasAxisTickRenderer"));
+    	
+    	JSONObject yaxis = new JSONObject();
+    	axes.put("yaxis", yaxis);
+    	
+    	if(StringUtil.isNonEmptyString(yAxisLabel)) {
+    		yaxis.put("label", new JSONLiteral("'"+yAxisLabel.trim()+"'"));
+    	}
+    	
+    	JSONObject yTickOptions = new JSONObject();
+    	yaxis.put("labelRenderer", new JSONLiteral("jQuery.jqplot.CanvasAxisLabelRenderer"));
+    	yTickOptions.put("formatString", new JSONLiteral("'%s'"));
+    	yTickOptions.put("labelPosition", new JSONLiteral("'middle'"));
+    	yaxis.put("tickOptions", yTickOptions);
+    	yaxis.put("tickRenderer", new JSONLiteral("jQuery.jqplot.CanvasAxisTickRenderer"));
+    	
     	
     	JSONObject cursor = new JSONObject();
     	cursor.put("show", new JSONLiteral("true")); 
     	cursor.put("zoom", new JSONLiteral("true")); 
     	cursor.put("showTooltip", new JSONLiteral("true")); 
     	cursor.put("dblClickReset", new JSONLiteral("true"));
-    	options.put("cursor", cursor);    	
+    	options.put("cursor", cursor);    	 
     	
     }
     

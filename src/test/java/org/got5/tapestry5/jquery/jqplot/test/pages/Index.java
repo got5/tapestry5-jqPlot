@@ -48,7 +48,9 @@ public class Index
     		                 "seriesLabels=dateSeriesLabels",
     		                 "xAxisMinDate=minDate",
     		                 "xAxisMaxDate=maxDate",
-    		                 "xAxisTickerInterval=literal:30 minutes",
+    		                 "xAxisTickerInterval=literal:10 minutes",
+    		                 "xAxisLabel=literal:Timestamp",
+    		                 "yAxisLabel=literal:GHZ",
     		                 "graphTitle=literal:XYDateChartWithZooming"})
     private JqPlotDateZooming chart4;
     
