@@ -23,7 +23,8 @@ public class JqPlotPie extends JqPlot {
     	renderer.put("rendererOptions",new JSONLiteral("{showDataLabels: true}"));	  
 	  
     	options.put("seriesDefaults", renderer);   
-    	options.put("legend", new JSONObject("{ show:true, location: 'e' }"));	  
+    	options.put("legend", new JSONObject("{ show:true, rendererOptions: { numberRows: 3 }, placement: 'outsideGrid', location: 's' }"));	  
+    	
     }
 
 }
