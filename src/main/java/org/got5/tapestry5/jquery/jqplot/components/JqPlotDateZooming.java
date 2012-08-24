@@ -65,7 +65,7 @@ public class JqPlotDateZooming extends JqPlot {
 				series.put(labelEntry);
 			}
 			options.put("series", series);
-			options.put("legend", new JSONObject("{ show:true, location: 'nw' }"));
+			options.put("legend", new JSONObject("{ show:true, rendererOptions: { numberRows: 1 }, placement: 'outsideGrid', location: 's' }"));
 		}
     	
     	JSONObject axes = new JSONObject();

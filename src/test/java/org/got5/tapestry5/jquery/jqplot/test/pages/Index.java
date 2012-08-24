@@ -64,8 +64,8 @@ public class Index
     
     public List<String> getDateSeriesLabels() {
     	List<String> labels = new ArrayList<String>();
-    	labels.add("Series1");
-    	labels.add("Series2");
+    	labels.add("Series-1");
+    	labels.add("Series-2");
     	return labels;
     }
     
@@ -151,6 +151,9 @@ public class Index
         list1.add(new TextValueDataItem("Light Industry",14));
         list1.add(new TextValueDataItem("Out of home", 16));
         list1.add(new TextValueDataItem("Orientation", 2));
+        list1.add(new TextValueDataItem("Test1- huge string here ----------------------------", 6));
+        list1.add(new TextValueDataItem("Test2- huge string here ++++++++++++++++++++++++++++++++++++", 7));
+        list1.add(new TextValueDataItem("Test3- huge string here ````````````````````````````````````", 8));
 
       
         dataList.add(list1);
