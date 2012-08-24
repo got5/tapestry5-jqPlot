@@ -65,7 +65,7 @@ public class JqPlotDateZooming extends JqPlot {
 				series.put(labelEntry);
 			}
 			options.put("series", series);
-			options.put("legend", new JSONObject("{ show:true, location: 'nw' }"));
+			options.put("legend", new JSONObject("{ show:true, rendererOptions: { numberRows: 1 }, placement: 'outsideGrid', location: 's' }"));
 		}
     	
     	JSONObject axes = new JSONObject();
@@ -107,7 +107,7 @@ public class JqPlotDateZooming extends JqPlot {
     	
     	JSONObject yTickOptions = new JSONObject();
     	yaxis.put("labelRenderer", new JSONLiteral("jQuery.jqplot.CanvasAxisLabelRenderer"));
-    	yTickOptions.put("formatString", new JSONLiteral("'%s'"));
+    	yTickOptions.put("formatString", new JSONLiteral("'%.2f'"));
     	yTickOptions.put("labelPosition", new JSONLiteral("'middle'"));
     	yaxis.put("tickOptions", yTickOptions);
     	yaxis.put("tickRenderer", new JSONLiteral("jQuery.jqplot.CanvasAxisTickRenderer"));
