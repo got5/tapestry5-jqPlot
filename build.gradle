@@ -30,7 +30,7 @@ configurations {
 
 Project projectDef = project;
 
-tapestryVersion = "5.3.3"
+tapestryVersion = "5.3.6"
 servletapi = "2.5"
 spock = "0.6-groovy-1.8"
 
@@ -45,7 +45,7 @@ repositories {
 
 dependencies {
 	compile "org.apache.tapestry:tapestry-core:$tapestryVersion"
-	compile "org.got5:tapestry5-jquery:3.3.0-SNAPSHOT"
+	compile "org.got5:tapestry5-jquery:3.3.0"
     
 
 	providedCompile "javax.servlet:servlet-api:2.5"

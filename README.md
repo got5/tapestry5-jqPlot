@@ -1,4 +1,4 @@
-# Tapestry 5 jQplot integration Module - 3.3.0-SNAPSHOT
+# Tapestry 5 jQplot integration Module - 3.3.0
 
 ## Changelog
 

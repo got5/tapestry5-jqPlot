@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.got5</groupId>
 	<artifactId>tapestry5-jqplot</artifactId>
-	<version>3.3.0-SNAPSHOT</version>
+	<version>3.3.0</version>
 	<packaging>jar</packaging>
 	<name>Tapestry 5 jqplot</name>
 
@@ -217,6 +217,6 @@
 	</distributionManagement>
 
 	<properties>
-		<tapestry-release-version>5.3.3</tapestry-release-version>
+		<tapestry-release-version>5.3.6</tapestry-release-version>
 	</properties>
 </project>
