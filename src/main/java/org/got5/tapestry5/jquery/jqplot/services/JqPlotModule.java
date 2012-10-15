@@ -16,7 +16,6 @@
 
 package org.got5.tapestry5.jquery.jqplot.services;
 
-import org.apache.tapestry5.SymbolConstants;
 import org.apache.tapestry5.ioc.Configuration;
 import org.apache.tapestry5.ioc.MappedConfiguration;
 import org.apache.tapestry5.ioc.OrderedConfiguration;
@@ -52,8 +51,8 @@ public class JqPlotModule
     public static void contributeFactoryDefaults(MappedConfiguration<String, String> configuration)
     {
        
-        configuration.add(JqPlotSymbolConstants.JQUERY_JQPLOT_CORE_PATH, "classpath:org/got5/tapestry5/jquery/jqplot/jquery.jqplot_core");
-        configuration.add(JqPlotSymbolConstants.JQUERY_JQPLOT_VERSION, "1.0.0b2_r792");
+        configuration.add(JqPlotSymbolConstants.JQUERY_JQPLOT_CORE_PATH, "classpath:org/got5/tapestry5/jquery/jqplot/jquery/jqplot_core");
+        configuration.add(JqPlotSymbolConstants.JQUERY_JQPLOT_VERSION, "v1_0_0b2_r792"); // Fixing java class path issue (old version 1.0.0b2_r792 )
        
     }
     
