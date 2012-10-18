@@ -19,6 +19,8 @@ This module provides jplot integration for Tapestry.
 Please be aware that not every core components are working correctly at the moment. There is still lot of developments to do. 
 All kind of feedback is very welcome. Please use [Github issues system](http://github.com/got5/tapestry5-jqplot/issues) for that.
  
+##Questions? Ideas? Comments?
+http://groups.google.com/group/tapestry5-jquery
 
 ## More Informations & contacts
 
