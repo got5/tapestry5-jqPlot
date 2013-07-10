@@ -1,0 +1,6 @@
+<html t:type="layout" t:title="Tapestry5 jqPlot" t:activeElement="0"  xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
+	<div  style="width:100%">
+				<div t:id="chart1" style="width: 584px ; height: 262px;"/>
+				
+	</div>					
+</html>

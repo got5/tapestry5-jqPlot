@@ -44,15 +44,20 @@ public class Index
     @Component(parameters = {"dataItems=testData", "graphTitle=literal:XYLineChartWithZooming"})
     private JqPlotZooming chart3;
  
+    @Component(parameters = {"dataItems=testData", "graphTitle=literal:XYBarChart"})
+    private JqPlotBar chart4;
+    
     @Component(parameters = {"dataItems=testDateData", 
     		                 "seriesLabels=dateSeriesLabels",
-    		                 "xAxisMinDate=minDate",
-    		                 "xAxisMaxDate=maxDate",
+    		                 /*xAxisMinDate=minDate",
+    		                 "xAxisMaxDate=maxDate",*/
     		                 "xAxisTickerInterval=literal:10 minutes",
     		                 "xAxisLabel=literal:Timestamp",
     		                 "yAxisLabel=literal:GHZ",
     		                 "graphTitle=literal:XYDateChartWithZooming"})
-    private JqPlotDateZooming chart4;
+    private JqPlotDateZooming chart5;
+    
+    
     
     public Date getMaxDate() {
     	return ((List<DateValueDataItem>) getTestDateData().get(0)).get(0).getDate();

@@ -52,7 +52,7 @@ public class JqPlotModule
     {
        
         configuration.add(JqPlotSymbolConstants.JQUERY_JQPLOT_CORE_PATH, "classpath:org/got5/tapestry5/jquery/jqplot/jquery/jqplot_core");
-        configuration.add(JqPlotSymbolConstants.JQUERY_JQPLOT_VERSION, "v1_0_0b2_r792"); // Fixing java class path issue (old version 1.0.0b2_r792 )
+        configuration.add(JqPlotSymbolConstants.JQUERY_JQPLOT_VERSION, "v1_0_8"); 
        
     }
     

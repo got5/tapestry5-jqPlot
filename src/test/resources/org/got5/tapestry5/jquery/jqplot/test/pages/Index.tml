@@ -1,8 +1,9 @@
-<html t:type="layout" t:title="Tapestry5 jqPlot" t:activeElement="0"  xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+<html t:type="layout" t:title="Tapestry5 jqPlot" t:activeElement="0"  xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
 	<div  style="width:100%">
 				<div t:id="chart1" style="width: auto; height: 150px;"/>
 				<div t:id="chart2" style="width: auto; height: 300px;"/>
 				<div t:id="chart3" style="width: auto; height: 150px;"/>
 				<div t:id="chart4" style="width: auto; height: 350px;"/>
+				<div t:id="chart5" style="width: auto; height: 350px;"/>
 	</div>					
 </html>
