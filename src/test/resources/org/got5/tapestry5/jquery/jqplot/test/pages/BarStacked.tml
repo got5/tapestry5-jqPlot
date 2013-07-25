@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html  xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+	<div class="pagecontent">
+		<table width="100%" align="center">
+			<tr>
+				<td><div t:id="chart4" /></td>
+			</tr>
+			
+		</table>
+	</div>
+</html>
