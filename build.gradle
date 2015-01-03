@@ -30,7 +30,7 @@ configurations {
 
 Project projectDef = project;
 
-tapestryVersion = "5.3.6"
+tapestryVersion = "5.3.7"
 servletapi = "2.5"
 spock = "0.6-groovy-1.8"
 
