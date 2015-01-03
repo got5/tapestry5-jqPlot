@@ -5,9 +5,9 @@
         <parameter name="tapestry.web-app-folder" value="src/test/jquery/jqplot/webapp"/>
         <parameter name="browserStartCommand" value="*googlechrome" />
 
-        <classes>
-            <class name="org.got5.tapestry5.jquery.jqplot.test.JQueryTest"></class>
-        </classes>
+        <packages>
+    		<package name="org.got5.tapestry5.jquery.jqplot.test"/>
+    	</packages>
 
     </test>
 </suite>
