@@ -1,7 +1,8 @@
-# Tapestry 5 jQplot integration Module - 3.3.3
+# Tapestry 5 jQplot integration Module - 3.4.0
 
 ## Changelog
-- 3.3.3 : Upgrade to Tapestry 5.3.8 with Tapestry-jQuery 3.3.9
+- 3.4.0 : Upgrade to Tapestry 5.3.7 with Tapestry-jQuery 3.4.1 and jQuery 1.10.2
+- 3.3.3 : Upgrade to Tapestry 5.3.8 with Tapestry-jQuery 3.3.9 
 - 3.3.2 : Upgrade to Tapestry-jQuery 3.3.8  
 - 3.3.2-SNAPSHOT : Upgrade to Tapestry 5.3.7 with Tapestry-jQuery 3.3.6  
 - 3.3.1-SNAPSHOT : Upgrade to 5.3.6  
@@ -14,7 +15,7 @@ This module provides jplot integration for Tapestry.
 
 
 ## How to use it
-
+[http://www.jqplot.com/](http://www.jqplot.com/)
 
 
 ## Important notice
