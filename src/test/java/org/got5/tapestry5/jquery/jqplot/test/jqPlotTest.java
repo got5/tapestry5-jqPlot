@@ -20,6 +20,11 @@ public class jqPlotTest extends SeleniumTestCase {
 		assertTrue(isElementPresent("//*[@id='chart3']/div[2]/div[@class='jqplot-xaxis-tick']"));
 		//check if the jqplot-cursor-tooltip is displayed for chart3
 		assertTrue(isElementPresent("//*[@id='chart3']/div[@class='jqplot-cursor-tooltip']"));
-						
+		
+	
+		//check if the jqplot-table-legend is displayed for chart4
+		assertTrue(isElementPresent("//*[@id='chart4']/table[@class='jqplot-table-legend']"));
+				
+		
 	}
 }
