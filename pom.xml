@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.got5</groupId>
 	<artifactId>tapestry5-jqplot</artifactId>
-	<version>3.4.0</version>
+	<version>3.4.1</version>
 	<packaging>jar</packaging>
 	<name>Tapestry 5 jqplot</name>
 
@@ -48,7 +48,7 @@
         <dependency>
 			<groupId>org.got5</groupId>
             <artifactId>tapestry5-jquery</artifactId>
-            <version>3.4.1</version>
+            <version>3.4.2</version>
 		</dependency>
 
 	</dependencies>
@@ -183,7 +183,6 @@
 			<url>http://repository.apache.org/snapshots</url>
 		</repository>
 
-		<!-- TODO: remove when 5.3 hits central -->
 		<repository>
             <id>apache-staging</id>
             <url>https://repository.apache.org/content/groups/staging/</url>
@@ -216,6 +215,6 @@
 	</distributionManagement>
 
 	<properties>
-		<tapestry-release-version>5.3.7</tapestry-release-version>
+		<tapestry-release-version>5.3.8</tapestry-release-version>
 	</properties>
 </project>
