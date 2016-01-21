@@ -1,6 +1,7 @@
-# Tapestry 5 jQplot integration Module - 3.4.0
+# Tapestry 5 jQplot integration Module - 3.4.1
 
 ## Changelog
+- 3.4.1 : Upgrade to Tapestry 5.3.8 with Tapestry-jQuery 3.4.2 and jQuery 1.10.2
 - 3.4.0 : Upgrade to Tapestry 5.3.7 with Tapestry-jQuery 3.4.1 and jQuery 1.10.2
 - 3.3.3 : Upgrade to Tapestry 5.3.8 with Tapestry-jQuery 3.3.9 
 - 3.3.2 : Upgrade to Tapestry-jQuery 3.3.8  
@@ -24,7 +25,7 @@ Please be aware that not every core components are working correctly at the mome
 All kind of feedback is very welcome. Please use [Github issues system](http://github.com/got5/tapestry5-jqplot/issues) for that.
  
 ##Questions? Ideas? Comments?
-http://groups.google.com/group/tapestry5-jquery
+https://github.com/got5/tapestry5-jqPlot/issues
 
 ## More Informations & contacts
 
