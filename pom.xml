@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.got5</groupId>
 	<artifactId>tapestry5-jqplot</artifactId>
-	<version>3.4.1</version>
+	<version>3.4.2-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>Tapestry 5 jqplot</name>
 
@@ -55,6 +55,17 @@
 	<build>
 		<finalName>tapestry-jqplot</finalName>
 		<plugins>
+			<plugin>
+		      <groupId>org.sonatype.plugins</groupId>
+		      <artifactId>nexus-staging-maven-plugin</artifactId>
+		      <version>1.6.3</version>
+		      <extensions>true</extensions>
+		      <configuration>
+		        <serverId>ossrh</serverId>
+		        <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+		        <autoReleaseAfterClose>true</autoReleaseAfterClose>
+		      </configuration>
+	    	</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
@@ -130,6 +141,7 @@
 					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
+			
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
@@ -139,6 +151,19 @@
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
+			
+			<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-javadoc-plugin</artifactId>
+						<executions>
+						<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+						</execution>
+						</executions>
+					</plugin>
 		</plugins>
 	</build>
 
@@ -188,6 +213,64 @@
         	<url>http://maven.springframework.org/release</url>
     	</pluginRepository>
     </pluginRepositories>
+
+	 <distributionManagement>
+	  <snapshotRepository>
+	    <id>ossrh</id>
+	    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+	  </snapshotRepository>
+	  <repository>
+    	<id>ossrh</id>
+   	 	<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+  	  </repository>
+	</distributionManagement>
+	<profiles>
+        <profile>
+            <id>mac-os-test</id>
+            <activation>
+                <os><family>mac</family></os>
+            </activation>
+            <properties>
+                <browserStartCommand>*googlechrome /Applications/Google Chrome.app/Contents/MacOS/Google Chrome</browserStartCommand>
+            </properties>
+        </profile>
+        <profile>
+            <id>linux-test</id>
+            <activation>
+                <os><name>Linux</name></os>
+            </activation>
+            <properties>
+                <browserStartCommand>*firefox</browserStartCommand>
+            </properties>
+        </profile>
+        <profile>
+            <id>release</id>
+            <activation>
+            <property>
+                <name>performRelease</name>
+                <value>true</value>
+            </property>
+        </activation>
+        <build>
+            <plugins>
+                <plugin>
+			      <groupId>org.apache.maven.plugins</groupId>
+			      <artifactId>maven-gpg-plugin</artifactId>
+			      <version>1.5</version>
+			      <executions>
+			        <execution>
+			          <id>sign-artifacts</id>
+			          <phase>verify</phase>
+			          <goals>
+			            <goal>sign</goal>
+			          </goals>
+			        </execution>
+			      </executions>
+			 	</plugin>
+            </plugins>
+        </build>
+        </profile>
+	</profiles>
 
 	<properties>
 		<tapestry-release-version>5.3.8</tapestry-release-version>
