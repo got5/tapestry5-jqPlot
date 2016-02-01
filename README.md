@@ -1,6 +1,7 @@
-# Tapestry 5 jQplot integration Module - 3.4.1
+# Tapestry 5 jQplot integration Module - 3.4.2
 
 ## Changelog
+- 3.4.2 : deployment to Maven Central
 - 3.4.1 : Upgrade to Tapestry 5.3.8 with Tapestry-jQuery 3.4.2 and jQuery 1.10.2
 - 3.4.0 : Upgrade to Tapestry 5.3.7 with Tapestry-jQuery 3.4.1 and jQuery 1.10.2
 - 3.3.3 : Upgrade to Tapestry 5.3.8 with Tapestry-jQuery 3.3.9 
