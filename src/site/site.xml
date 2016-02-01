@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<project name="Atos Worldline Tapestry 5 JQuery Mobile library ">
+<project name="Tapestry 5 jqPlot library ">
 
     <publishDate format="dd MMM yyyy"/>
 
@@ -7,7 +7,7 @@
 
     <body>
 
-        <menu name="AWL tapestry-jquery-mobile">
+        <menu name="tapestry-jqPlot">
             <item name="About" href="index.html"/>
         </menu>
 
